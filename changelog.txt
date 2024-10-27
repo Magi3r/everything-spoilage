@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2024-10-27
+  Info:
+    - add thumbnail
+    - change mod description
+    - Make description more descriptive.
+  Features:
+    - add settings for spoil_time
+    - make everything spoil
