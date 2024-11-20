@@ -1,12 +1,15 @@
 {
   "name": "everything-spoilage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Everything Spoilage",
   "author": "Magi3r, Gladon4",
   "homepage": "https://github.com/Magi3r/everything-spoilage",
   "description": "The Ultimate Gleba-Experience for Every Planet!\nAdds spoiling to almost every item.",
   "factorio_version": "2.0",
-  "dependencies": ["base", "? space-age"],
+  "dependencies": [
+    "base",
+    "? space-age"
+  ],
   "quality_required": false,
   "space_travel_required": false,
   "spoiling_required": true,
