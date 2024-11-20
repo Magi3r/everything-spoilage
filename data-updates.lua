@@ -1,6 +1,8 @@
-require("spoilage")
-require("item")
-require("item_groups")
-require("recipe")
-
-
+if (settings.startup["random-spoilage-mode"].value) then
+    require("prototypes.random-spoilage")
+else
+    require("prototypes.spoilage")
+    require("prototypes.item")
+    require("prototypes.item_groups")
+    require("prototypes.recipe")
+end
