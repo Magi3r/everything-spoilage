@@ -1,20 +1,53 @@
+require("prototypes.function")
+set_seed(settings.startup["random-spoilage-seed"].value)
 
-math.randomseed(settings.startup["random-spoilage-seed"].value)
+local random_item_blacklist = {
+    "coin",
+    "empty-module-slot",
+    "green-wire",
+    "item-unknown",
+    "parameter-0",
+    "parameter-1",
+    "parameter-2",
+    "parameter-3",
+    "parameter-4",
+    "parameter-5",
+    "parameter-6",
+    "parameter-7",
+    "parameter-8",
+    "parameter-9",
+    "red-wire",
+    "rocket-part",
+    "science",
+    "infinity-chest",
+    "infinity-pipe",
+    "linked-chest",
+    "linked-belt",
+    "simple-entity-with-owner",
+    "simple-entity-with-force",
+    "lane-splitter",
+    "loader",
+    "express-loader",
+    "fast-loader",
+    "turbo-loader",
+    "burner-generator",
+    "electric-energy-interface",
+    "heat-interface"
+}
 
-local number_items = 0
+local all_items = {}
+local i = 1
 for key, value in pairs(data.raw.item) do
-    number_items = number_items+1
-end
-
-for key, value in pairs(data.raw.item) do
-    if not value.spoil_result then
-        value.spoil_result = "spoilage"
-        local spoil_minute =  math.floor(settings.startup["random-spoilage-min-spoil-time"].value+(settings.startup["random-spoilage-max-spoil-time"].value - settings.startup["random-spoilage-min-spoil-time"].value)*math.random()^5)
-        value.spoil_ticks = spoil_minute * minute
+    if (not has_value(random_item_blacklist, value.name)) then
+        all_items[i] = value.name
+        i = i+1
     end
 end
 
--- data.raw["item"]["iron-plate"].spoil_result = data.raw.item[math.random(number_items)]
--- data.raw["item"]["iron-plate"].spoil_ticks = number_items * hour
-
--- settings.startup["everything-spoilage-spoil_time"].value
+for key, value in pairs(data.raw.item) do
+    if (not has_value(random_item_blacklist, value.name)) then 
+        value.spoil_result = all_items[randomValue(table_size(all_items))]
+        local spoil_minute =  math.floor(settings.startup["random-spoilage-min-spoil-time"].value+(settings.startup["random-spoilage-max-spoil-time"].value - settings.startup["random-spoilage-min-spoil-time"].value)*randomValue()^3)
+        value.spoil_ticks = spoil_minute * minute
+    end
+end
