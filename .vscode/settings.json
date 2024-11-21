@@ -27,8 +27,7 @@
     "factorio.versions": [
         {
             "name": "FactorioSteam",
-            "factorioPath": "/home/alex/.steam/debian-installation/steamapps/common/Factorio/bin/x64/factorio",
-            "active": true
+            "factorioPath": "/home/alex/.steam/debian-installation/steamapps/common/Factorio/bin/x64/factorio"
         }
     ],
     "Lua.workspace.userThirdParty": [
