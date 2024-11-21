@@ -1,4 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2024-11-21
+  Info:
+    - add thumbnail
+    - change mod description
+    - Make description more descriptive.
+  Features:
+    - add settings for spoil_time
+    - iron and copper plate rusting and spiling to metal scrap
+    - make everything spoil
+    - more items recipes and better structure
+    - random spoilage implemented
+  Graphics:
+    - added and updated icons
+    - Added rusted iron and copper plate and new logo
+  Locale:
+    - Added localisation for items and recipes
+  Changes:
+    - restructure and random spoilage times
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2024-11-20
   Bugfixes:
