@@ -28,6 +28,7 @@ There are 3 different modes the mod can run in. You can change them in the setti
 - Promotes anti-buffering and unconventional approaches to production chains
 - Brings the principles of Gleba to all items
 - Balanced spoil times
+- See [spoilage-flowchart.md](spoilage-flowchart.md) for a detailed overview of the spoilage chains
 
 ### Random
 - Total madness!

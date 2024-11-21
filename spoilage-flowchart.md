@@ -23,10 +23,10 @@ recycler -->|10%| Copper
 ```
 
 Ratios:
-Smelting: 10:1
-Chemical:10:1.5
-Foundry: 10:1.5
-Recycler: 10:2
+- Smelting: 10:1
+- Chemical: 10:1.5
+- Foundry: 10:1.5
+- Recycler: 10:2
 
 ## Electronics
 
@@ -47,3 +47,8 @@ em --> rc_recipe((Advanced circuit recycling))
 Plastic -->|2x| rc_recipe
 rc_recipe -->|1x| red
 ```
+
+Ratios:
+- Electronic circuit (assembler) : 10:1
+- Electronic circuit (electromagnetic plant): 10:2
+- Advanced circuit: 10:1
