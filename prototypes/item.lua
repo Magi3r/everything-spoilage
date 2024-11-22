@@ -58,13 +58,17 @@ data:extend(
     {
         type = "item",
         name = "oil-scrap",
-        icon = "__base__/graphics/icons/fluid/heavy-oil.png", --todo: icon
+        icon = "__everything-spoilage__/graphics/icons/oil-scrap.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
         spoil_result = "spoilage",
         spoil_ticks = 1 * minute,
         subgroup = "spoilage-items",
-        weight = 1 * kg
+        weight = 1 * kg,
+        fuel_value = "250kJ",
+        fuel_category = "chemical",
+        fuel_acceleration_multiplier = 0.5,
+        fuel_top_speed_multiplier = 0.5,
     }
 }
 )
