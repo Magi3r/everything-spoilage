@@ -145,5 +145,56 @@ data:extend(
                         {type = "item", name = "plastic-bar", amount = 10}},
         results = {{type="item", name="advanced-circuit", amount=3}}
     },
+    {
+        type = "recipe",
+        name = "advanced-metal-scrap-founrdy-tungsten-carbide",
+        icon= "__space-age__/graphics/icons/tungsten-carbide.png",
+        icon_size = 64,
+        category = "metallurgy",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "advanced-metal-scrap", amount = 10},
+                        {type = "fluid", name = "sulfuric-acid", amount = 50},
+                        {type = "item", name = "carbon", amount = 2}},
+        results = {{type="item", name="tungsten-carbide", amount = 2}}
+    },
+    {
+        type = "recipe",
+        name = "advanced-metal-scrap-founrdy-tungsten-plate",
+        icon= "__space-age__/graphics/icons/tungsten-plate.png",
+        icon_size = 64,
+        category = "metallurgy",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "advanced-metal-scrap", amount = 10},
+                        {type = "fluid", name = "sulfuric-acid", amount = 50},
+                        {type = "fluid", name = "molten-iron", amount = 20}},
+        results = {{type="item", name="tungsten-plate", amount = 2}}
+    },
+    {
+        type = "recipe",
+        name = "advanced-metal-scrap-founrdy-holmium",
+        icon= "__space-age__/graphics/icons/fluid/holmium-solution.png",
+        icon_size = 64,
+        category = "metallurgy",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "advanced-metal-scrap", amount = 10},
+                        {type = "fluid", name = "sulfuric-acid", amount = 50}},
+        results = {{type="fluid", name="holmium-solution", amount = 40}}
+    },
+    {
+        type = "recipe",
+        name = "advanced-metal-scrap-founrdy-lithium",
+        icon= "__space-age__/graphics/icons/lithium-plate.png",
+        icon_size = 64,
+        category = "metallurgy",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "advanced-metal-scrap", amount = 10},
+                        {type = "fluid", name = "sulfuric-acid", amount = 50},
+                        {type = "fluid", name = "holmium-solution", amount = 20}},
+        results = {{type="item", name="lithium-plate", amount = 2}}
+    },
 }
 )
