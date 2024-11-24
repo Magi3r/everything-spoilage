@@ -43,6 +43,55 @@ local genral_spoilage =
   {"advanced-circuit", "electronic-scrap",  1*hour},
   {"processing-unit", "electronic-scrap",  2*hour},
   {"quantum-processor", "electronic-scrap",  2*hour},
+  {"transport-belt", "basic-metal-scrap", 30*minute},
+  {"fast-transport-belt", "basic-metal-scrap", 30*minute},
+  {"express-transport-belt", "basic-metal-scrap", 30*minute},
+  {"turbo-transport-belt", "advanced-metal-scrap", 30*minute},
+  {"inserter", "basic-metal-scrap", 30*minute},
+  {"long-handed-inserter", "basic-metal-scrap", 30*minute},
+  {"burner-inserter", "basic-metal-scrap", 30*minute},
+  {"fast-inserter", "basic-metal-scrap", 30*minute},
+  {"bulk-inserter", "basic-metal-scrap", 30*minute},
+  {"stack-inserter", "basic-metal-scrap", 30*minute},
+  {"engine-unit", "basic-metal-scrap", 1*hour},
+  {"electric-engine-unit", "basic-metal-scrap", 1*hour},
+  {"medium-electric-pole", "basic-metal-scrap", 30*minute},
+  {"big-electric-pole", "basic-metal-scrap", 1*hour},
+  {"small-lamp", "basic-metal-scrap", 1*hour},
+  {"train-stop", "basic-metal-scrap", 1*hour},
+  {"low-density-structure", "basic-metal-scrap", 1*hour},
+  {"rail-support", "basic-metal-scrap", 1*hour},
+  {"power-switch", "basic-metal-scrap", 30*minute},
+  {"programmable-speaker", "basic-metal-scrap", 30*minute},
+  {"electric-mining-drill", "basic-metal-scrap", 1*hour},
+  {"burner-mining-drill", "basic-metal-scrap", 30*minute},
+  {"pumpjack", "basic-metal-scrap", 1*hour},
+  {"stone-furnace", "basic-metal-scrap", 30*minute},
+  {"steel-furnace", "basic-metal-scrap", 1*hour},
+  {"electric-furnace", "basic-metal-scrap", 2*hour},
+  {"recycler", "basic-metal-scrap", 1*hour},
+  {"heating-tower", "basic-metal-scrap", 1*hour},
+  {"agricultural-tower", "basic-metal-scrap", 1*hour},
+  {"assembling-machine-1", "basic-metal-scrap", 30*minute},
+  {"assembling-machine-2", "basic-metal-scrap", 1*hour},
+  {"assembling-machine-3", "basic-metal-scrap", 2*hour},
+  {"oil-refinery", "basic-metal-scrap", 1*hour},
+  {"chemical-plant", "basic-metal-scrap", 1*hour},
+  {"centrifuge", "basic-metal-scrap", 1*hour},
+  {"lab", "basic-metal-scrap", 1*hour},
+  {"lightning-rod", "basic-metal-scrap", 1*hour},
+  {"biochamber", "basic-metal-scrap", 1*hour},
+  {"roboport", "basic-metal-scrap", 1*hour},
+  {"boiler", "basic-metal-scrap", 30*minute},
+  {"steam-engine", "basic-metal-scrap", 30*minute},
+  {"solar-panel", "basic-metal-scrap", 1*hour},
+  {"accumulator", "basic-metal-scrap", 1*hour},
+  {"nuclear-reactor", "basic-metal-scrap", 4*hour},
+  {"heat-pipe", "basic-metal-scrap", 1*hour},
+  {"heat-exchanger", "basic-metal-scrap", 1*hour},
+  {"steam-turbine", "basic-metal-scrap", 1*hour},
+  {"fusion-reactor", "advanced-metal-scrap", 5*hour},
+  {"fusion-generator", "advanced-metal-scrap", 5*hour},
 }
 
 local special_spoilage = 
@@ -59,14 +108,25 @@ local special_spoilage =
   {"module", "speed-module", "electronic-scrap",  1*hour},
   {"module", "speed-module-2", "electronic-scrap",  2*hour},
   {"module", "speed-module-3", "electronic-scrap",  4*hour},
+  {"item-with-entity-data", "locomotive", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "car", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "artillery-wagon", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "cargo-wagon", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "fluid-wagon", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "spidertron", "basic-metal-scrap",  1*hour},
+  {"item-with-entity-data", "tank", "basic-metal-scrap",  1*hour},
+  {"rail-planner", "rail", "basic-metal-scrap",  1*hour},
+  {"rail-planner", "rail-ramp", "basic-metal-scrap",  1*hour},
 }
 
 for key, value in pairs(genral_spoilage) do
+  log("now spoiling: " .. value[1])
   data.raw["item"][value[1]].spoil_result = value[2]
   data.raw["item"][value[1]].spoil_ticks = value[3]
 end
 
 for key, value in pairs(special_spoilage) do
+  log("now spoiling: " .. value[2])
   data.raw[value[1]][value[2]].spoil_result = value[3]
   data.raw[value[1]][value[2]].spoil_ticks = value[4]
 end
