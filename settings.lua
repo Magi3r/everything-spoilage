@@ -45,5 +45,12 @@ data:extend(
         default_value = 10 * 60,
         minimum_value = 1,
         maximum_value = 100 * 60,
+    },
+    {
+        type = "bool-setting",
+        name = "everything-spoilage-debug",
+        setting_type = "startup",
+        default_value = true,
+        hidden = true
     }
 })

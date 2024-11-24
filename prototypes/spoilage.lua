@@ -117,16 +117,32 @@ local special_spoilage =
   {"item-with-entity-data", "tank", "basic-metal-scrap",  1*hour},
   {"rail-planner", "rail", "basic-metal-scrap",  1*hour},
   {"rail-planner", "rail-ramp", "basic-metal-scrap",  1*hour},
+  {"tool", "automation-science-pack", "basic-metal-scrap",  1*hour},
+  {"tool", "logistic-science-pack", "basic-metal-scrap",  1*hour},
+  {"tool", "military-science-pack", "basic-metal-scrap",  1*hour},
+  {"tool", "production-science-pack", "basic-metal-scrap",  1*hour},
+  {"tool", "space-science-pack", "basic-metal-scrap",  1*hour},
+  {"tool", "chemical-science-pack", "oil-scrap",  1*hour},
+  {"tool", "utility-science-pack", "electronic-scrap",  1*hour},
+  {"tool", "agricultural-science-pack", "spoilage",  1*hour},
+  {"tool", "metallurgic-science-pack", "advanced-metal-scrap",  1*hour},
+  {"tool", "electromagnetic-science-pack", "advanced-metal-scrap",  1*hour},
+  {"tool", "cryogenic-science-pack", "advanced-metal-scrap",  1*hour},
+  {"tool", "promethium-science-pack", "advanced-metal-scrap",  1*hour},
 }
 
 for key, value in pairs(genral_spoilage) do
-  log("now spoiling: " .. value[1])
+  if settings.startup["everything-spoilage-debug"].value then
+    log("now spoiling: " .. value[1])
+  end
   data.raw["item"][value[1]].spoil_result = value[2]
   data.raw["item"][value[1]].spoil_ticks = value[3]
 end
 
 for key, value in pairs(special_spoilage) do
-  log("now spoiling: " .. value[2])
+  if settings.startup["everything-spoilage-debug"].value then
+    log("now spoiling: " .. value[2])
+  end
   data.raw[value[1]][value[2]].spoil_result = value[3]
   data.raw[value[1]][value[2]].spoil_ticks = value[4]
 end
