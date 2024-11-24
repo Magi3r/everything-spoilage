@@ -1,5 +1,5 @@
 -- todo: spoil times
-local spoilage = 
+local genral_spoilage = 
 {
   {"iron-plate", "rusted-iron-plate", 30*minute},
   {"copper-plate", "rusted-copper-plate", 30*minute},
@@ -26,12 +26,49 @@ local spoilage =
   {"plastic-bar", "oil-scrap", 10*hour},
   {"sulfur", "oil-scrap", 1*hour},
   {"battery", "oil-scrap", 1*hour},
-  {"explosives", "oil-scrap", 3*hour}
-} 
+  {"explosives", "oil-scrap", 3*hour},
+  {"flying-robot-frame", "electronic-scrap",  1*hour},
+  {"logistic-robot", "electronic-scrap",  1*hour},
+  {"construction-robot", "electronic-scrap",  1*hour},
+  {"substation", "electronic-scrap",  1*hour},
+  {"rail-signal", "electronic-scrap",  30*minute},
+  {"rail-chain-signal", "electronic-scrap",  30*minute},
+  {"decider-combinator", "electronic-scrap",  30*minute},
+  {"arithmetic-combinator", "electronic-scrap",  30*minute},
+  {"constant-combinator", "electronic-scrap",  30*minute},
+  {"constant-combinator", "electronic-scrap",  30*minute},
+  {"display-panel", "electronic-scrap",  30*minute},
+  {"beacon", "electronic-scrap",  1*hour},
+  {"electronic-circuit", "electronic-scrap",  30*minute},
+  {"advanced-circuit", "electronic-scrap",  1*hour},
+  {"processing-unit", "electronic-scrap",  2*hour},
+  {"quantum-processor", "electronic-scrap",  2*hour},
+}
 
-for key, value in pairs(spoilage) do
+local special_spoilage = 
+{
+  {"module", "efficiency-module", "electronic-scrap",  1*hour},
+  {"module", "efficiency-module-2", "electronic-scrap",  2*hour},
+  {"module", "efficiency-module-3", "electronic-scrap",  4*hour},
+  {"module", "productivity-module", "electronic-scrap",  1*hour},
+  {"module", "productivity-module-2", "electronic-scrap",  2*hour},
+  {"module", "productivity-module-3", "electronic-scrap",  4*hour},
+  {"module", "quality-module", "electronic-scrap",  1*hour},
+  {"module", "quality-module-2", "electronic-scrap",  2*hour},
+  {"module", "quality-module-3", "electronic-scrap",  4*hour},
+  {"module", "speed-module", "electronic-scrap",  1*hour},
+  {"module", "speed-module-2", "electronic-scrap",  2*hour},
+  {"module", "speed-module-3", "electronic-scrap",  4*hour},
+}
+
+for key, value in pairs(genral_spoilage) do
   data.raw["item"][value[1]].spoil_result = value[2]
   data.raw["item"][value[1]].spoil_ticks = value[3]
+end
+
+for key, value in pairs(special_spoilage) do
+  data.raw[value[1]][value[2]].spoil_result = value[3]
+  data.raw[value[1]][value[2]].spoil_ticks = value[4]
 end
 
 -- for key, value in pairs(data.raw.item) do

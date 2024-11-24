@@ -87,7 +87,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "basic-metal-scrap-recycle-chemical",
+        name = "basic-metal-scrap-recycle",
         icon= "__base__/graphics/icons/iron-plate.png",
         icon_size = 64,
         category = "recycling",
@@ -109,6 +109,41 @@ data:extend(
                         {type = "fluid", name = "steam", amount = 50}},
         results = {{type="fluid", name="heavy-oil", amount=50},
                     {type="item", name="carbon", amount=1, probability=0.4}}
-    }
+    },
+    {
+        type = "recipe",
+        name = "electronic-scrap-recyle",
+        icon= "__space-age__/graphics/icons/scrap.png",
+        icon_size = 64,
+        category = "recycling",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "electronic-scrap", amount = 1}},
+        results = {{type="item", name="iron-plate", amount=1, probability=0.2},
+                    {type="item", name="copper-plate", amount=1, probability=0.2}}
+    },
+    {
+        type = "recipe",
+        name = "basic-electronic-scrap-to-green-circuit",
+        icon= "__base__/graphics/icons/electronic-circuit.png",
+        icon_size = 64,
+        category = "electronics-or-assembling",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "electronic-scrap", amount = 10}},
+        results = {{type="item", name="electronic-circuit", amount=2}}
+    },
+    {
+        type = "recipe",
+        name = "basic-electronic-scrap-to-red-ircuit",
+        icon= "__base__/graphics/icons/advanced-circuit.png",
+        icon_size = 64,
+        category = "electromagnetics",
+        energy_required = 5,
+        subgroup = "scrap-processing",
+        ingredients = {{type = "item", name = "electronic-scrap", amount = 10},
+                        {type = "item", name = "plastic-bar", amount = 10}},
+        results = {{type="item", name="advanced-circuit", amount=3}}
+    },
 }
 )

@@ -58,7 +58,7 @@ data:extend(
     {
         type = "item",
         name = "oil-scrap",
-        icon = "__everything-spoilage__/graphics/icons/oil-scrap.png", --todo: icon
+        icon = "__everything-spoilage__/graphics/icons/oil-scrap.png",
         icon_size = 64,
         stack_size = 100,
         spoil_result = "spoilage",
