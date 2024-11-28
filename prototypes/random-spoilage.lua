@@ -35,19 +35,43 @@ local random_item_blacklist = {
     "heat-interface"
 }
 
+local categories = {
+    "item",
+    "tool",
+    "module",
+    "item-with-entity-data",
+    "rail-planner",
+    "ammo",
+    "gun",
+    "armor",
+    "capsule",
+}
+
 local all_items = {}
 local i = 1
-for key, value in pairs(data.raw.item) do
-    if (not has_value(random_item_blacklist, value.name)) then
-        all_items[i] = value.name
-        i = i+1
+
+for _, category in pairs(categories) do
+    for _, item in pairs(data.raw[category]) do
+        if not item.hidden and not has_value(random_item_blacklist, item.name) then
+            all_items[i] = item.name
+            i = i+1
+        end
     end
 end
 
-for key, value in pairs(data.raw.item) do
-    if (not has_value(random_item_blacklist, value.name)) then 
-        value.spoil_result = all_items[randomValue(table_size(all_items))]
-        local spoil_minute =  math.floor(settings.startup["random-spoilage-min-spoil-time"].value+(settings.startup["random-spoilage-max-spoil-time"].value - settings.startup["random-spoilage-min-spoil-time"].value)*randomValue()^3)
-        value.spoil_ticks = spoil_minute * minute
+for _, category in pairs(categories) do
+    for _, item in pairs(data.raw[category]) do
+        if not item.hidden and not has_value(random_item_blacklist, item.name) then 
+            local spoil_result = item.name
+            while spoil_result == item.name do
+                -- make sure items cant spoil into themselves
+                spoil_result = all_items[randomValue(table_size(all_items))]
+            end
+            -- This log is used for the graphing script
+            -- log(item.name .. ", " .. spoil_result)
+            item.spoil_result = spoil_result
+            local spoil_minute =  math.floor(settings.startup["random-spoilage-min-spoil-time"].value+(settings.startup["random-spoilage-max-spoil-time"].value - settings.startup["random-spoilage-min-spoil-time"].value)*randomValue()^3)
+            item.spoil_ticks = spoil_minute * minute
+        end
     end
 end
