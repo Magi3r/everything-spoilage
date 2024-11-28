@@ -55,6 +55,7 @@ data:extend(
         default_value = 10 * 60,
         minimum_value = 1,
         maximum_value = 100 * 60,
+        order = "c3"
     },
     {
         type = "bool-setting",
