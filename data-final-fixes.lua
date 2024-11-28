@@ -1,5 +1,5 @@
 ------------- PEAK GLEBA MODE -------------
-if settings.startup["everything-spoilage-mod_mode"].value == "peak-gleba" then
+if settings.startup["everything-spoilage_mod-mode"].value == "peak-gleba" then
     -- Make space age optionally required
     local spoil_result = "wood"
     if mods["space-age"] then
@@ -22,7 +22,7 @@ if settings.startup["everything-spoilage-mod_mode"].value == "peak-gleba" then
         for _, item in pairs(data.raw[category]) do
             if not item.spoil_result and not item.hidden and item.name ~= spoil_result then
                 item.spoil_result = spoil_result
-                item.spoil_ticks = settings.startup["everything-spoilage-spoil_time"].value * minute
+                item.spoil_ticks = settings.startup["everything-spoilage_spoil-time"].value * minute
             end
         end
     end
