@@ -34,7 +34,7 @@ if (settings.startup["everything-spoilage_mod-mode"].value == "random") then
 end
 
 ------------- NORMAL MODE -------------
-if (settings.startup["everything-spoilage-mod_mode"].value == "normal") then
+if (settings.startup["everything-spoilage_mod-mode"].value == "normal") then
     require("prototypes.item")
     require("prototypes.spoilage")
     require("prototypes.item_groups")
