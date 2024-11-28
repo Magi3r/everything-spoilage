@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2024-11-28
+  Bugfixes:
+    - Fixed Guns, ammo, trains and some other stuff not spoiling in Peak Gleba Mode. Have fun
+  Changes:
+    - code changes
+    - link flowchart in readme
+    - update readme
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2024-11-21
   Info:
