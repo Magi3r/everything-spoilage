@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2024-11-28
+  Bugfixes:
+    - Fixed Guns, ammo, trains and some other stuff not spoiling in Random Mode. Have fun (Could this have been in the last patch? yes!)
+  Locale:
+    - Made the name and description of the settings more clear
+  Changes:
+    - Some under the hood changes
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 2024-11-28
   Bugfixes:
