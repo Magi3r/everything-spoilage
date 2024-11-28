@@ -1,4 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+Date: 2024-11-28
+  Bugfixes:
+    - Hotfix so Settings work and display and random mode doesnt crash
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 2024-11-28
+  Bugfixes:
+    - Fixed Guns, ammo, trains and some other stuff not spoiling in Random Mode. Have fun (Could this have been in the last patch? yes!)
+  Locale:
+    - Made the name and description of the settings more clear
+  Changes:
+    - Some under the hood changes
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2024-11-28
+  Bugfixes:
+    - Fixed Guns, ammo, trains and some other stuff not spoiling in Peak Gleba Mode. Have fun
+  Changes:
+    - code changes
+    - link flowchart in readme
+    - update readme
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 2024-11-21
   Info:
