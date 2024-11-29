@@ -1,5 +1,4 @@
-data:extend(
-{
+data:extend({
     {
         type = "item",
         name = "rusted-iron-plate",
@@ -29,7 +28,7 @@ data:extend(
     },
     {
         type = "item",
-        name = "basic-metal-scrap",
+        name = "basic-scrap-metal",
         icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
@@ -38,7 +37,7 @@ data:extend(
     },
     {
         type = "item",
-        name = "advanced-metal-scrap",
+        name = "advanced-scrap-metal",
         icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
@@ -47,7 +46,7 @@ data:extend(
     },
     {
         type = "item",
-        name = "electronic-scrap",
+        name = "electronic-waste",
         icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
@@ -56,8 +55,8 @@ data:extend(
     },
     {
         type = "item",
-        name = "oil-scrap",
-        icon = "__everything-spoilage__/graphics/icons/oil-scrap.png",
+        name = "oily-waste",
+        icon = "__everything-spoilage__/graphics/icons/oily-waste.png",
         icon_size = 64,
         stack_size = 100,
         spoil_result = "spoilage",
@@ -71,12 +70,11 @@ data:extend(
     },
     {
         type = "item",
-        name = "atomic-scrap",
-        icon = "__everything-spoilage__/graphics/icons/atomic-scrap.png", --todo: icon
+        name = "radioactive-waste",
+        icon = "__everything-spoilage__/graphics/icons/radioactive-waste.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
         subgroup = "spoilage-items",
         weight = 1 * kg
     },
-}
-)
+})
