@@ -105,6 +105,12 @@ local genral_spoilage =
   {"superconductor", "advanced-metal-scrap", 2*hour},
   {"fusion-power-cell", "advanced-metal-scrap", 2*hour},
   {"cryogenic-plant", "advanced-metal-scrap", 2*hour},
+  {"uranium-235", "atomic-scrap", 2^32-1},
+  {"uranium-238", "atomic-scrap", 2^32-1},
+  {"uranium-fuel-cell", "atomic-scrap", 4*hour},
+  {"depleted-uranium-fuel-cell", "atomic-scrap", 2*hour},
+  {"nuclear-fuel", "atomic-scrap", 4*hour},
+  {"fission-reactor-equipment", "atomic-scrap", 4*hour},
 }
 
 local special_spoilage = 
@@ -142,6 +148,7 @@ local special_spoilage =
   {"tool", "electromagnetic-science-pack", "advanced-metal-scrap",  1*hour},
   {"tool", "cryogenic-science-pack", "advanced-metal-scrap",  1*hour},
   {"tool", "promethium-science-pack", "advanced-metal-scrap",  1*hour},
+  {"ammo", "uranium-rounds-magazine", "atomic-scrap",  2*hour},
 }
 
 local explosive_spoilage = 

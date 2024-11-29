@@ -53,8 +53,7 @@ data:extend(
         stack_size = 100,
         subgroup = "spoilage-items",
         weight = 1 * kg
-    }
-    ,
+    },
     {
         type = "item",
         name = "oil-scrap",
@@ -69,6 +68,15 @@ data:extend(
         fuel_category = "chemical",
         fuel_acceleration_multiplier = 0.5,
         fuel_top_speed_multiplier = 0.5,
-    }
+    },
+    {
+        type = "item",
+        name = "atomic-scrap",
+        icon = "__everything-spoilage__/graphics/icons/atomic-scrap.png", --todo: icon
+        icon_size = 64,
+        stack_size = 100,
+        subgroup = "spoilage-items",
+        weight = 1 * kg
+    },
 }
 )
