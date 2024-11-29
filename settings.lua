@@ -59,6 +59,14 @@ data:extend(
     },
     {
         type = "bool-setting",
+        name = "everything-spoilage_exploding-explosives",
+        localised_name = { "mod-setting-name.exploding-explosives" },
+        localised_description = { "mod-setting-description.exploding-explosives" },
+        setting_type = "startup",
+        default_value = false
+    },
+    {
+        type = "bool-setting",
         name = "everything-spoilage-debug",
         setting_type = "startup",
         default_value = true,

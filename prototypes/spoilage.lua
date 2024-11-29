@@ -1,5 +1,13 @@
--- todo: spoil times
-local genral_spoilage = 
+--[[
+  TODO: tweak spoilage times
+]]--
+
+
+--[[
+normal spoiling items.
+schema: {item_name, spoil_result, spoil_time}
+]]--
+local general_spoilage = 
 {
   {"iron-plate", "rusted-iron-plate", 30*minute},
   {"copper-plate", "rusted-copper-plate", 30*minute},
@@ -113,6 +121,11 @@ local genral_spoilage =
   {"fission-reactor-equipment", "radioactive-waste", 4*hour},
 }
 
+
+--[[
+special spoiling items.
+schema: {type, item_name, spoil_result, spoil_time}
+]]--
 local special_spoilage = 
 {
   {"module", "efficiency-module", "electronic-waste",  1*hour},
@@ -151,6 +164,10 @@ local special_spoilage =
   {"ammo", "uranium-rounds-magazine", "radioactive-waste",  2*hour},
 }
 
+--[[
+exploding spoiling items
+schema: {type, item_name, spoil_result, spoil_time}
+]]--
 local explosive_spoilage = 
 {
   {"ammo", "rocket", "grenade", 1*hour},
@@ -164,10 +181,11 @@ local explosive_spoilage =
   {"ammo", "railgun-ammo", "grenade", 3*hour},
   {"capsule", "grenade", "grenade", 1*hour},
   {"capsule", "cluster-grenade", "cluster-grenade", 1*hour},
-  {"item", "land-mine", "grenade", 1*hour},
+  {"item", "land-mine", "grenade", 1*hour}
 }
 
-for _, spoilage_recipe in pairs(genral_spoilage) do
+-- apply spoiling to regular items
+for _, spoilage_recipe in pairs(general_spoilage) do
   if settings.startup["everything-spoilage-debug"].value then
     log("now spoiling: " .. spoilage_recipe[1])
   end
@@ -176,6 +194,7 @@ for _, spoilage_recipe in pairs(genral_spoilage) do
   data.raw["item"][spoilage_recipe[1]].spoil_ticks = spoilage_recipe[3]
 end
 
+-- apply spoiling to special items
 for _, spoilage_recipe in pairs(special_spoilage) do
   if settings.startup["everything-spoilage-debug"].value then
     log("now spoiling: " .. spoilage_recipe[2])
@@ -185,35 +204,38 @@ for _, spoilage_recipe in pairs(special_spoilage) do
   data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_ticks = spoilage_recipe[4]
 end
 
-for _, spoilage_recipe in pairs(explosive_spoilage) do
-  if settings.startup["everything-spoilage-debug"].value then
-    log("now spoiling: " .. spoilage_recipe[2])
-  end
+-- apply spoiling to explosive items
+if settings.startup["everything-spoilage_exploding-explosives"].value then
+  for _, spoilage_recipe in pairs(explosive_spoilage) do
+    if settings.startup["everything-spoilage-debug"].value then
+      log("now spoiling: " .. spoilage_recipe[2])
+    end
 
-  local type = "projectile"
-  if spoilage_recipe[2] == "artillery-shell" then
-    type = "artillery"
-  end
+    local type = "projectile"
+    if spoilage_recipe[2] == "artillery-shell" then
+      type = "artillery"
+    end
 
-  local spoilage_result = 
-  {
-    items_per_trigger = 1,
-    trigger =
+    local spoilage_result = 
     {
-      type = "direct",
-      action_delivery =
+      items_per_trigger = 1,
+      trigger =
       {
-        type = type,
-        projectile = spoilage_recipe[3],
-        starting_speed = 0
+        type = "direct",
+        action_delivery =
+        {
+          type = type,
+          projectile = spoilage_recipe[3],
+          starting_speed = 0
+        }
       }
     }
-  }
 
-  data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_ticks = spoilage_recipe[4]
-  data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_to_trigger_result = spoilage_result
-  if type == "artillery" then
-    type = "artillery-projectile"
+    data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_ticks = spoilage_recipe[4]
+    data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_to_trigger_result = spoilage_result
+    if type == "artillery" then
+      type = "artillery-projectile"
+    end
+    data.raw[type][spoilage_recipe[3]].icon = "__base__/graphics/icons/explosion.png"
   end
-  data.raw[type][spoilage_recipe[3]].icon = "__base__/graphics/icons/explosion.png"
 end
