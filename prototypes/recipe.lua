@@ -99,7 +99,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "basic-metal-scrap-recycle-chemical",
+        name = "oil-scrap-recycle-chemical",
         icon= "__base__/graphics/icons/fluid/heavy-oil.png",
         icon_size = 64,
         category = "oil-processing",
@@ -120,7 +120,7 @@ data:extend(
         subgroup = "scrap-processing",
         ingredients = {{type = "item", name = "electronic-scrap", amount = 1}},
         results = {{type="item", name="iron-plate", amount=1, probability=0.2},
-                    {type="item", name="copper-plate", amount=1, probability=0.2}}
+                    {type="item", name="copper-wire", amount=1, probability=0.2}}
     },
     {
         type = "recipe",
@@ -135,7 +135,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "basic-electronic-scrap-to-red-ircuit",
+        name = "basic-electronic-scrap-to-red-circuit",
         icon= "__base__/graphics/icons/advanced-circuit.png",
         icon_size = 64,
         category = "electromagnetics",
@@ -147,7 +147,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "advanced-metal-scrap-founrdy-tungsten-carbide",
+        name = "advanced-metal-scrap-foundry-tungsten-carbide",
         icon= "__space-age__/graphics/icons/tungsten-carbide.png",
         icon_size = 64,
         category = "metallurgy",
@@ -160,7 +160,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "advanced-metal-scrap-founrdy-tungsten-plate",
+        name = "advanced-metal-scrap-foundry-tungsten-plate",
         icon= "__space-age__/graphics/icons/tungsten-plate.png",
         icon_size = 64,
         category = "metallurgy",
@@ -173,7 +173,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "advanced-metal-scrap-founrdy-holmium",
+        name = "advanced-metal-scrap-foundry-holmium",
         icon= "__space-age__/graphics/icons/fluid/holmium-solution.png",
         icon_size = 64,
         category = "metallurgy",
@@ -185,7 +185,7 @@ data:extend(
     },
     {
         type = "recipe",
-        name = "advanced-metal-scrap-founrdy-lithium",
+        name = "advanced-metal-scrap-foundry-lithium",
         icon= "__space-age__/graphics/icons/lithium-plate.png",
         icon_size = 64,
         category = "metallurgy",
