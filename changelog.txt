@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2024-12-02
+  Features:
+    - Random Spilage can now result in explosions, biters or pentapods
+  Compatibility:
+    - Load Peak-Gleba mode changes earlier for better compatibility with other mods
+  Bugfixes:
+    - Random spoilage can no longer result in the old artillery targeting remote
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 2024-11-28
   Bugfixes:
