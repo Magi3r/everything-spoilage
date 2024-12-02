@@ -205,7 +205,7 @@ for _, spoilage_recipe in pairs(special_spoilage) do
 end
 
 -- apply spoiling to explosive items
-if settings.startup["everything-spoilage_exploding-explosives"].value then
+if settings.startup["everything-spoilage_random-exploding-explosives"].value then
   for _, spoilage_recipe in pairs(explosive_spoilage) do
     if settings.startup["everything-spoilage-debug"].value then
       log("now spoiling: " .. spoilage_recipe[2])
