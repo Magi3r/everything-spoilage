@@ -184,12 +184,38 @@ local explosive_spoilage =
   {"item", "land-mine", "grenade", 1*hour}
 }
 
+-- filter out items that dont exist
+function filterTable(table_to_filter, itemgroup)
+  local offset = 1
+  if itemgroup then
+    offset = 0
+  end
+  local keepList = {}
+  for i, entry in ipairs(table_to_filter) do
+    local filter_from = itemgroup or entry[1]
+    local valid = (data.raw[filter_from][entry[1 + offset]] ~= nil)
+        and (data.raw["item"][entry[2 + offset]] ~= nil)
+    if valid then
+      if settings.startup["everything-spoilage-debug"].value then
+        log("add spoiling: " .. entry[1 + offset] .. " to: " .. entry[2 + offset])
+      end
+      table.insert(keepList, i)
+    end
+  end
+  local new_table = {}
+  for _, i in pairs(keepList) do
+    table.insert(new_table, table_to_filter[i])
+  end
+  return new_table
+end
+general_spoilage = filterTable(general_spoilage, "item")
+special_spoilage = filterTable(special_spoilage)
+explosive_spoilage = filterTable(explosive_spoilage)
 -- apply spoiling to regular items
 for _, spoilage_recipe in pairs(general_spoilage) do
   if settings.startup["everything-spoilage-debug"].value then
     log("now spoiling: " .. spoilage_recipe[1])
   end
-
   data.raw["item"][spoilage_recipe[1]].spoil_result = spoilage_recipe[2]
   data.raw["item"][spoilage_recipe[1]].spoil_ticks = spoilage_recipe[3]
 end

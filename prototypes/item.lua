@@ -59,8 +59,6 @@ data:extend({
         icon = "__everything-spoilage__/graphics/icons/oily-waste.png",
         icon_size = 64,
         stack_size = 100,
-        spoil_result = "spoilage",
-        spoil_ticks = 1 * minute,
         subgroup = "spoilage-items",
         weight = 1 * kg,
         fuel_value = "250kJ",
