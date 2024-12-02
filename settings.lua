@@ -56,5 +56,28 @@ data:extend(
         minimum_value = 1,
         maximum_value = 100 * 60,
         order = "c3"
-    }
+    },
+    {
+        type = "string-setting",
+        name = "everything-spoilage_random-exploding-explosives",
+        localised_name = { "mod-setting-name.random-exploding-explosives" },
+        localised_description = { "mod-setting-description.random-exploding-explosives" },
+        allowed_values = {
+            "off",      -- no spoiling into explosives
+            "small",    -- exploding into granade explosives
+            "all"       -- all explosions possible (also atomic)
+        },
+        setting_type = "startup",
+        default_value = "off",
+        order = "c4"
+    },
+    {
+        type = "bool-setting",
+        name = "everything-spoilage_random-biter-spoilage",
+        localised_name = { "mod-setting-name.random-biter-spoilage" },
+        localised_description = { "mod-setting-description.random-biter-spoilage" },
+        setting_type = "startup",
+        default_value = false,
+        order = "c5"
+    },
 })
