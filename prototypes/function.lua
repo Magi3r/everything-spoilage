@@ -32,3 +32,16 @@ function has_value (tab, val)
 
     return false
 end
+
+function split(input, delimiter)
+    local result = {}
+    delimiter = delimiter or "%s" -- Default delimiter is whitespace if not provided
+    for match in (input .. delimiter):gmatch("(.-)" .. delimiter) do
+        table.insert(result, match)
+    end
+    return result
+end
+
+function starts_with(input, prefix)
+    return input:find("^" .. prefix) ~= nil
+end
