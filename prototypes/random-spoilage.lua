@@ -32,7 +32,8 @@ local random_item_blacklist = {
     "turbo-loader",
     "burner-generator",
     "electric-energy-interface",
-    "heat-interface"
+    "heat-interface",
+    "artillery-targeting-remote"
 }
 
 local categories = {
