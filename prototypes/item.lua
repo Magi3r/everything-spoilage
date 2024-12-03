@@ -29,7 +29,7 @@ data:extend({
     {
         type = "item",
         name = "basic-scrap-metal",
-        icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
+        icon = "__base__/graphics/icons/iron-ore.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
         subgroup = "spoilage-items",
@@ -38,7 +38,7 @@ data:extend({
     {
         type = "item",
         name = "advanced-scrap-metal",
-        icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
+        icon = "__base__/graphics/icons/iron-ore.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
         subgroup = "spoilage-items",
@@ -47,7 +47,7 @@ data:extend({
     {
         type = "item",
         name = "electronic-waste",
-        icon = "__space-age__/graphics/icons/scrap.png", --todo: icon
+        icon = "__base__/graphics/icons/copper-ore.png", --todo: icon
         icon_size = 64,
         stack_size = 100,
         subgroup = "spoilage-items",

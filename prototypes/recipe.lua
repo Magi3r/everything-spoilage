@@ -191,7 +191,7 @@ local core = {
     {
         type = "recipe",
         name = "electronic-waste-recyle",
-        icon = "__space-age__/graphics/icons/scrap.png",
+        icon = "__base__/graphics/icons/electronic-circuit.png",
         icon_size = 64,
         category = "recycling",
         energy_required = 5,
