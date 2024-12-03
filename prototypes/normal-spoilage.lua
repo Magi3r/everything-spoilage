@@ -105,6 +105,7 @@ local general_spoilage =
   {"tungsten-plate", "advanced-scrap-metal", 2*hour},
   {"holmium-plate", "advanced-scrap-metal", 2*hour},
   {"lithium-plate", "advanced-scrap-metal", 2*hour},
+  {"lithium", "advanced-scrap-metal", 2*hour},
   {"big-mining-drill", "advanced-scrap-metal", 2*hour},
   {"foundry", "advanced-scrap-metal", 2*hour},
   {"electromagnetic-plant", "advanced-scrap-metal", 2*hour},

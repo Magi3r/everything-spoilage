@@ -99,7 +99,7 @@ local space_age = {
     {
         type = "recipe",
         name = "lithium-from-advanced-scrap-metal-foundry",
-        icon = "__space-age__/graphics/icons/lithium-plate.png",
+        icon = "__space-age__/graphics/icons/lithium.png",
         icon_size = 64,
         category = "metallurgy",
         energy_required = 5,
@@ -107,7 +107,7 @@ local space_age = {
         ingredients = { { type = "item", name = "advanced-scrap-metal", amount = 10 },
             { type = "fluid", name = "sulfuric-acid",        amount = 50 },
             { type = "fluid", name = "holmium-solution",     amount = 20 } },
-        results = { { type = "item", name = "lithium-plate", amount = 2 } }
+        results = { { type = "item", name = "lithium", amount = 2 } }
     },
     {
         type = "recipe",
@@ -205,7 +205,7 @@ local core = {
 data:extend(core)
 
 -- load space_age if enabled
-if mods["space_age"] then
+if mods["space-age"] then
     data:extend(space_age)
 end
 
