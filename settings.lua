@@ -22,7 +22,7 @@ data:extend(
             localised_description = { "mod-setting-description.spoil-time" },
             setting_type = "startup",
             default_value = 60.0,
-            order = "b1"
+            order = "c1"
         },
         {
             type = "int-setting",
@@ -33,7 +33,7 @@ data:extend(
             default_value = 4096,
             minimum_value = 0,
             maximum_value = 1000000,
-            order = "c1"
+            order = "d1"
         },
         {
             type = "int-setting",
@@ -44,7 +44,7 @@ data:extend(
             default_value = 10,
             minimum_value = 1,
             maximum_value = 100 * 60,
-            order = "c2"
+            order = "d2"
         },
         {
             type = "int-setting",
@@ -55,7 +55,7 @@ data:extend(
             default_value = 10 * 60,
             minimum_value = 1,
             maximum_value = 100 * 60,
-            order = "c3"
+            order = "d3"
         },
         {
             type = "string-setting",
@@ -69,7 +69,7 @@ data:extend(
             },
             setting_type = "startup",
             default_value = "off",
-            order = "c4"
+            order = "d4"
         },
         {
             type = "bool-setting",
@@ -78,13 +78,14 @@ data:extend(
             localised_description = { "mod-setting-description.random-biter-spoilage" },
             setting_type = "startup",
             default_value = false,
-            order = "c5"
+            order = "d5"
         },
         {
             type="bool-setting",
             name = "modules-spoil",
             setting_type = "startup",
-            default_value = true
+            default_value = true,
+            order = c1
         },
         {
             type = "bool-setting",
