@@ -81,10 +81,16 @@ data:extend(
             order = "c5"
         },
         {
+            type="bool-setting",
+            name = "modules-spoil",
+            setting_type = "startup",
+            default_value = true
+        },
+        {
             type = "bool-setting",
             name = "everything-spoilage-debug",
             setting_type = "startup",
             default_value = true,
             hidden = true
-        }
+        },
     })

@@ -196,6 +196,7 @@ function filterTable(table_to_filter, itemgroup)
     local filter_from = itemgroup or entry[1]
     local valid = (data.raw[filter_from][entry[1 + offset]] ~= nil)
         and (data.raw["item"][entry[2 + offset]] ~= nil)
+    valid = valid or (filter_from == "module" and not settings["everything-spoilage-modules-spoil"].value)
     if valid then
       if settings.startup["everything-spoilage-debug"].value then
         log("add spoiling: " .. entry[1 + offset] .. " to: " .. entry[2 + offset])
