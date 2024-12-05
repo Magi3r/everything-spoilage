@@ -1,0 +1,7 @@
+-[ ] ICE -> nothing
+-[ ] Chests -> Metal Scrap
+-[ ] Stone/Landfill -> Stone
+-[ ] Modules dont rod? -> optional
+-[ ] fix explosion setting für normal mode
+-[ ] Add recipe descriptions
+-[ ] More screenshots
