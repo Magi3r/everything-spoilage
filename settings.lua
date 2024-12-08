@@ -82,10 +82,12 @@ data:extend(
         },
         {
             type="bool-setting",
-            name = "modules-spoil",
+            name = "everything-spoilage_modules-spoil",
+            localised_name = { "mod-setting-name.modules-spoil" },
+            localised_description = { "mod-setting-description.modules-spoil" },
             setting_type = "startup",
             default_value = true,
-            order = c1
+            order = "c1"
         },
         {
             type = "bool-setting",
