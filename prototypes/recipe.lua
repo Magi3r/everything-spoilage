@@ -19,8 +19,8 @@ local space_age = {
         energy_required = 5,
         subgroup = "waste-processing",
         ingredients = {{type = "item", name = "basic-scrap-metal", amount = 10}},
-        results = {{type="fluid", name="molten-iron", amount=25},
-                    {type="fluid", name="molten-copper", amount=25}},
+        results = { { type = "fluid", name = "molten-iron", amount = 10 },
+            { type = "fluid", name = "molten-copper", amount = 10 } },
         order = "b1"
     },
     {
@@ -43,8 +43,8 @@ local space_age = {
         energy_required = 5,
         subgroup = "waste-processing",
         ingredients = {{type = "item", name = "advanced-scrap-metal", amount = 10}},
-        results = {{type="fluid", name="molten-iron", amount=75},
-                    {type="fluid", name="molten-copper", amount=75}},
+        results = { { type = "fluid", name = "molten-iron", amount = 15 },
+            { type = "fluid", name = "molten-copper", amount = 15 } },
         order = "b3"
     },
     {
@@ -67,8 +67,8 @@ local space_age = {
         energy_required = 5,
         subgroup = "waste-processing",
         ingredients = {{type = "item", name = "electronic-waste", amount = 10}},
-        results = {{type="fluid", name="molten-iron", amount=50},
-                    {type="fluid", name="molten-copper", amount=50}},
+        results = { { type = "fluid", name = "molten-iron", amount = 15 },
+            { type = "fluid", name = "molten-copper", amount = 15 } },
         order = "b2"
     },
     {
@@ -290,9 +290,9 @@ local quality = {
         category = "recycling",
         energy_required = 5,
         subgroup = "waste-processing",
-        ingredients = { { type = "item", name = "basic-scrap-metal", amount = 1 } },
-        results = { { type = "item", name = "iron-plate", amount = 1, probability = 0.2 },
-            { type = "item", name = "copper-plate", amount = 1, probability = 0.2 } },
+        ingredients = { { type = "item", name = "basic-scrap-metal", amount = 5 } },
+        results = { { type = "item", name = "iron-plate", amount = 4, probability = 0.25 },
+            { type = "item", name = "copper-plate", amount = 4, probability = 0.25 } },
         order = "e1"
     },
     {
@@ -377,8 +377,8 @@ local core = {
         subgroup = "waste-processing",
         ingredients = { { type = "item", name = "basic-scrap-metal", amount = 10 },
             { type = "fluid", name = "sulfuric-acid",     amount = 30 } },
-        results = { { type = "item", name = "iron-plate", amount = 3, probability = 0.5 },
-            { type = "item", name = "copper-plate", amount = 3, probability = 0.5 } },
+        results = { { type = "item", name = "iron-plate", amount = 1, probability = 0.5 },
+            { type = "item", name = "copper-plate", amount = 1, probability = 0.5 } },
         order = "a4"
     },
     {
@@ -404,7 +404,7 @@ local core = {
         energy_required = 0.5,
         subgroup = "waste-processing",
         ingredients = { { type = "item", name = "rusted-iron-plate", amount = 1 },
-            { type = "fluid", name = "sulfuric-acid",     amount = 5 } },
+            { type = "fluid", name = "sulfuric-acid",     amount = 2 } },
         results = { { type = "item", name = "iron-plate", amount = 1, probability = 0.95 } },
         order = "a1"
     },
@@ -431,7 +431,7 @@ local core = {
         energy_required = 0.5,
         subgroup = "waste-processing",
         ingredients = { { type = "item", name = "rusted-copper-plate", amount = 1 },
-            { type = "fluid", name = "sulfuric-acid",       amount = 5 } },
+            { type = "fluid", name = "sulfuric-acid",       amount = 2 } },
         results = { { type = "item", name = "copper-plate", amount = 1, probability = 0.95 } },
         order = "a2"
     },
@@ -458,7 +458,7 @@ local core = {
         energy_required = 0.5,
         subgroup = "waste-processing",
         ingredients = { { type = "item", name = "rusted-steel-plate", amount = 1 },
-            { type = "fluid", name = "sulfuric-acid",      amount = 5 } },
+            { type = "fluid", name = "sulfuric-acid",      amount = 2 } },
         results = { { type = "item", name = "steel-plate", amount = 1, probability = 0.95 } },
         order = "a3"
     },
