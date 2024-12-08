@@ -45,3 +45,35 @@ end
 function starts_with(input, prefix)
     return input:find("^" .. prefix) ~= nil
 end
+
+-- filter out items that dont exist
+function filterTable(table_to_filter, itemgroup)
+    local offset = 1
+    local explosives = false
+    if itemgroup then
+      offset = 0
+    end
+    if itemgroup == "explosives" then
+        offset = 1
+        itemgroup = nil
+        explosives = true
+    end
+    local keepList = {}
+    for i, entry in ipairs(table_to_filter) do
+      local filter_from = itemgroup or entry[1]
+      local valid = (data.raw[filter_from][entry[1 + offset]] ~= nil)
+          and ((data.raw["item"][entry[2 + offset]] ~= nil or explosives))
+      valid = valid and not (filter_from == "module" and not settings.startup["everything-spoilage_normal-modules-spoil"].value)
+      if valid then
+        if settings.startup["everything-spoilage-debug"].value then
+          log("add spoiling: " .. entry[1 + offset] .. " --> " .. entry[2 + offset])
+        end
+        table.insert(keepList, i)
+      end
+    end
+    local new_table = {}
+    for _, i in pairs(keepList) do
+      table.insert(new_table, table_to_filter[i])
+    end
+    return new_table
+  end

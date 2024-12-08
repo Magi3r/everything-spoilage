@@ -1,3 +1,4 @@
+require("prototypes.function")
 --[[
   TODO: tweak spoilage times
 ]]--
@@ -44,7 +45,7 @@ local general_spoilage =
   {"decider-combinator", "electronic-waste",  30*minute},
   {"arithmetic-combinator", "electronic-waste",  30*minute},
   {"constant-combinator", "electronic-waste",  30*minute},
-  {"constant-combinator", "electronic-waste",  30*minute},
+  {"selector-combinator", "electronic-waste",  30*minute},
   {"display-panel", "electronic-waste",  30*minute},
   {"beacon", "electronic-waste",  1*hour},
   {"electronic-circuit", "electronic-waste",  30*minute},
@@ -55,6 +56,14 @@ local general_spoilage =
   {"fast-transport-belt", "basic-scrap-metal", 30*minute},
   {"express-transport-belt", "basic-scrap-metal", 1*hour},
   {"turbo-transport-belt", "advanced-scrap-metal", 2*hour},
+  {"underground-belt", "basic-scrap-metal", 30*minute},
+  {"fast-underground-belt", "basic-scrap-metal", 30*minute},
+  {"express-underground-belt", "basic-scrap-metal", 1*hour},
+  {"turbo-underground-belt", "advanced-scrap-metal", 2*hour},
+  {"splitter", "basic-scrap-metal", 30*minute},
+  {"fast-splitter", "basic-scrap-metal", 30*minute},
+  {"express-splitter", "basic-scrap-metal", 1*hour},
+  {"turbo-splitter", "advanced-scrap-metal", 2*hour},
   {"inserter", "basic-scrap-metal", 30*minute},
   {"long-handed-inserter", "basic-scrap-metal", 30*minute},
   {"burner-inserter", "basic-scrap-metal", 30*minute},
@@ -75,7 +84,6 @@ local general_spoilage =
   {"burner-mining-drill", "basic-scrap-metal", 30*minute},
   {"pumpjack", "basic-scrap-metal", 1*hour},
   {"offshore-pump", "basic-scrap-metal", 1*hour},
-  -- {"stone-furnace", "basic-scrap-metal", 30*minute},
   {"steel-furnace", "basic-scrap-metal", 1*hour},
   {"electric-furnace", "basic-scrap-metal", 2*hour},
   {"recycler", "basic-scrap-metal", 1*hour},
@@ -120,6 +128,15 @@ local general_spoilage =
   {"depleted-uranium-fuel-cell", "radioactive-waste", 2*hour},
   {"nuclear-fuel", "radioactive-waste", 4*hour},
   {"fission-reactor-equipment", "radioactive-waste", 4*hour},
+  {"iron-chest", "basic-scrap-metal", 1*hour},
+  {"steel-chest", "basic-scrap-metal", 2*hour},
+  {"buffer-chest", "basic-scrap-metal", 2*hour},
+  {"requester-chest", "basic-scrap-metal", 2*hour},
+  {"active-provider-chest", "basic-scrap-metal", 2*hour},
+  {"passive-provider-chest", "basic-scrap-metal", 2*hour},
+  {"storage-chest", "basic-scrap-metal", 2*hour},
+  {"storage-tank", "basic-scrap-metal", 2*hour},
+  {"pump", "basic-scrap-metal", 1*hour},
 }
 
 
@@ -185,60 +202,26 @@ local explosive_spoilage =
   {"item", "land-mine", "grenade", 1*hour}
 }
 
--- filter out items that dont exist
-function filterTable(table_to_filter, itemgroup)
-  local offset = 1
-  if itemgroup then
-    offset = 0
-  end
-  local keepList = {}
-  for i, entry in ipairs(table_to_filter) do
-    local filter_from = itemgroup or entry[1]
-    local valid = (data.raw[filter_from][entry[1 + offset]] ~= nil)
-        and (data.raw["item"][entry[2 + offset]] ~= nil)
-    valid = valid and not (filter_from == "module" and not settings.startup["everything-spoilage_modules-spoil"].value)
-    if valid then
-      if settings.startup["everything-spoilage-debug"].value then
-        log("add spoiling: " .. entry[1 + offset] .. " to: " .. entry[2 + offset])
-      end
-      table.insert(keepList, i)
-    end
-  end
-  local new_table = {}
-  for _, i in pairs(keepList) do
-    table.insert(new_table, table_to_filter[i])
-  end
-  return new_table
-end
+
+
 general_spoilage = filterTable(general_spoilage, "item")
 special_spoilage = filterTable(special_spoilage)
-explosive_spoilage = filterTable(explosive_spoilage)
+explosive_spoilage = filterTable(explosive_spoilage, "explosives")
 -- apply spoiling to regular items
 for _, spoilage_recipe in pairs(general_spoilage) do
-  if settings.startup["everything-spoilage-debug"].value then
-    log("now spoiling: " .. spoilage_recipe[1])
-  end
   data.raw["item"][spoilage_recipe[1]].spoil_result = spoilage_recipe[2]
   data.raw["item"][spoilage_recipe[1]].spoil_ticks = spoilage_recipe[3]
 end
 
 -- apply spoiling to special items
 for _, spoilage_recipe in pairs(special_spoilage) do
-  if settings.startup["everything-spoilage-debug"].value then
-    log("now spoiling: " .. spoilage_recipe[2])
-  end
-
   data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_result = spoilage_recipe[3]
   data.raw[spoilage_recipe[1]][spoilage_recipe[2]].spoil_ticks = spoilage_recipe[4]
 end
 
 -- apply spoiling to explosive items
-if settings.startup["everything-spoilage_random-exploding-explosives"].value then
+if settings.startup["everything-spoilage_normal-exploding-explosives"].value then
   for _, spoilage_recipe in pairs(explosive_spoilage) do
-    if settings.startup["everything-spoilage-debug"].value then
-      log("now spoiling: " .. spoilage_recipe[2])
-    end
-
     local type = "projectile"
     if spoilage_recipe[2] == "artillery-shell" then
       type = "artillery"
