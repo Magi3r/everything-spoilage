@@ -1,7 +1,7 @@
 -[x] Chests -> Metal Scrap
 -[ ] Unlock recipes with technologies
--[ ] fix explosion setting für normal mode
--[ ] balancing
+-[x] fix explosion setting für normal mode
+-[x] balancing
 -[x] Modules dont rod? -> optional
 -[ ] Add recipe descriptions
 -[ ] More screenshots

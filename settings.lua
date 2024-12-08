@@ -22,7 +22,7 @@ data:extend(
             localised_description = { "mod-setting-description.spoil-time" },
             setting_type = "startup",
             default_value = 60.0,
-            order = "c1"
+            order = "b1"
         },
         {
             type = "int-setting",
@@ -82,12 +82,21 @@ data:extend(
         },
         {
             type="bool-setting",
-            name = "everything-spoilage_modules-spoil",
-            localised_name = { "mod-setting-name.modules-spoil" },
-            localised_description = { "mod-setting-description.modules-spoil" },
+            name = "everything-spoilage_normal-modules-spoil",
+            localised_name = { "mod-setting-name.normal-modules-spoil" },
+            localised_description = { "mod-setting-description.normal-modules-spoil" },
             setting_type = "startup",
             default_value = true,
             order = "c1"
+        },
+        {
+            type = "bool-setting",
+            name = "everything-spoilage_normal-exploding-explosives",
+            localised_name = { "mod-setting-name.normal-exploding-explosives" },
+            localised_description = { "mod-setting-description.normal-exploding-explosives" },
+            setting_type = "startup",
+            default_value = true,
+            order = "c2"
         },
         {
             type = "bool-setting",
