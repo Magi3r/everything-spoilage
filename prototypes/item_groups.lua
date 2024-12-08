@@ -2,7 +2,7 @@ data:extend(
 {
   {
     type = "item-subgroup",
-    name = "scrap-processing",
+    name = "waste-processing",
     group = "intermediate-products",
     order = "d"
   },

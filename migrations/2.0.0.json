@@ -1,0 +1,12 @@
+{
+    "item":[
+        ["basic-metal-scrap", "basic-scrap-metal"]
+    ],
+    "recipe": [
+        ["basic-metal-scrap-smelting-foundry","basic-scrap-metal-smelting-foundry"],
+        ["basic-metal-scrap-breakdown", "basic-scrap-metal-recycle-chemical"]
+    ],
+    "item-subgroup": [
+        ["scrap-processing", "waste-processing"]
+    ]
+}

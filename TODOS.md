@@ -1,0 +1,9 @@
+-[x] Chests -> Metal Scrap
+-[ ] Unlock recipes with technologies
+-[x] fix explosion setting für normal mode
+-[x] balancing
+-[x] Modules dont rod? -> optional
+-[ ] Add recipe descriptions
+-[ ] More screenshots
+-[ ] Stone/Landfill -> Stone
+-[ ] ICE -> nothing
