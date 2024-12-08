@@ -12,7 +12,7 @@ data:extend(
                 "random"  -- random spoil time, random spoil results
             },
             setting_type = "startup",
-            default_value = "peak-gleba",
+            default_value = "normal",
             order = "a"
         },
         {
