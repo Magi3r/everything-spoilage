@@ -1,4 +1,45 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2024-12-08
+  Features:
+    - added intermediate spoilage items
+    - Added setting for spoiling modules
+    - Advanced Metal Spoiling and recycling
+    - Basic Metal Products now spoil
+    - Electronics now spoil and can be recycles
+    - Explosive Weapons Spoilage now explodes on spoil
+    - make exploding items optional in settings
+    - normal mode is now the default mode
+    - Nuclear Spoilage
+    - oil products now spoil to oily clumps and beyond
+    - recipe balancing
+    - Scienses all spoil
+  Compatibility:
+    - add migrations script
+    - define items and recipes earlier
+    - Make space age optional in normal mode
+    - [normal] use base icons instead of space-age items for non-space-age players
+  Bugfixes:
+    - add missing chest spoilage recipe
+    - module spoiling now checks setting
+    - Random spoilage can no longer result in the old artillery targeting remote
+  Graphics:
+    - added oil scrap (Oily Clump) icon
+    - Atomic Scrap Icon
+    - Icons for the new recipies
+    - New textures for the different scrap types
+    - updated and added graphics
+  Locale:
+    - add recipes
+    - added english local
+    - Added names on existing (but usually hidden) enitities for explosion spoilage
+    - change settings description
+    - fix missing recipe name
+  Changes:
+    - git restructure
+    - refactor item and recipe names to be more consistent
+    - Restruture of Code for future work
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2024-12-02
   Features:
