@@ -102,7 +102,7 @@ data:extend(
             type = "bool-setting",
             name = "everything-spoilage-debug",
             setting_type = "startup",
-            default_value = true,
+            default_value = false,
             hidden = true
         },
     })
