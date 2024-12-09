@@ -4,7 +4,7 @@
   "title": "Everything Spoilage",
   "author": "Magi3r, Gladon",
   "homepage": "https://github.com/Magi3r/everything-spoilage",
-  "description": "The Ultimate Gleba-Experience for Every Planet!\nAdds spoiling to almost every item.",
+  "description": "The Ultimate Gleba-Experience for Every Planet!\nAdds spoiling to almost every item. Very customizable.",
   "factorio_version": "2.0",
   "dependencies": [
     "base",

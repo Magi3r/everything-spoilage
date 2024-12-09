@@ -16,24 +16,28 @@
 
 There are 3 different modes the mod can run in. You can change them in the settings.
 
+### Normal
+- Metals rust, electronic circuits break
+- Introduces multiple ways to recycle the waste
+- Promotes anti-buffering and unconventional approaches to production chains
+- Brings the principles of Gleba to all items
+- Balanced spoil times
+
 ### Peak Gleba
 - The Ultimate Glea Experience! Everywhere!
 - For the TRUE Chad-Gleba-Enjoyers!
 - Embrace the SPOILAGE!
 - Worship the flying Pentapod! (not included)
 
-### Normal (WIP)
-- Metals rust, electronic circuits break
-- Introduces multiple ways to recycle the waste
-- Promotes anti-buffering and unconventional approaches to production chains
-- Brings the principles of Gleba to all items
-- Balanced spoil times
-- See [spoilage-flowchart.md](spoilage-flowchart.md) for a detailed overview of the spoilage chains
-
 ### Random
 - Total madness!
 - Randomized spoil results
 - Randomized spoil times
+
+## Additional Settings
+- Explosives may explode when spoiling
+- Customizable Spoil time for Peak Gleba-Mode and Random-Mode
+- Items may produce pentapods or biters when spoiling in Random-Mode
 
 ## Installation
 
