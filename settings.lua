@@ -106,3 +106,17 @@ data:extend(
             hidden = true
         },
     })
+
+if mods["space-age"] then
+    data:extend(
+        {{
+            type = "bool-setting",
+            name = "everything-spoilage_random-pentapod-spoilage",
+            localised_name = { "mod-setting-name.random-pentapod-spoilage" },
+            localised_description = { "mod-setting-description.random-pentapod-spoilage" },
+            setting_type = "startup",
+            default_value = false,
+            order = "d6"
+        }}
+    )
+end
