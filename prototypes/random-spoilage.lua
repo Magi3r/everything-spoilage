@@ -74,8 +74,14 @@ end
 
 if settings.startup["everything-spoilage_random-biter-spoilage"].value then
     all_items[i] = "spawn_big-biter"
-    all_items[i+1] = "spawn_big-wriggler-pentapod-premature"
-    i = i+2
+    i = i+1
+end
+
+if mods["space-age"] then
+    if settings.startup["everything-spoilage_random-pentapod-spoilage"].value then
+        all_items[i+1] = "spawn_big-wriggler-pentapod-premature"
+        i = i+1
+    end
 end
 
 for _, category in pairs(categories) do
