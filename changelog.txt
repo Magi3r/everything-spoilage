@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.2
+Date: 2025-08-19
+  Locale:
+    - Fixed small spelling mistake
+  Changes:
+    - Pentapod Spoilage Setting for Random Mode now separate from Biters. This also prevnets the game from crashing without space age installed.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.1
 Date: 2024-12-09
   Info:
