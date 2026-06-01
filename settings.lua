@@ -82,12 +82,12 @@ data:extend(
         },
         {
             type="bool-setting",
-            name = "everything-spoilage_normal-modules-spoil",
-            localised_name = { "mod-setting-name.normal-modules-spoil" },
-            localised_description = { "mod-setting-description.normal-modules-spoil" },
+            name = "everything-spoilage_all-modules-spoil",
+            localised_name = { "mod-setting-name.all-modules-spoil" },
+            localised_description = { "mod-setting-description.all-modules-spoil" },
             setting_type = "startup",
             default_value = true,
-            order = "c1"
+            order = "e1"
         },
         {
             type = "bool-setting",
@@ -96,7 +96,7 @@ data:extend(
             localised_description = { "mod-setting-description.normal-exploding-explosives" },
             setting_type = "startup",
             default_value = true,
-            order = "c2"
+            order = "c1"
         },
         {
             type = "bool-setting",

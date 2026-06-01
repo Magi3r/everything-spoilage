@@ -87,6 +87,10 @@ if mods["space-age"] then
 end
 
 for _, category in pairs(categories) do
+    if category=="module" and not settings.startup["everything-spoilage_all-modules-spoil"].value then
+        goto continue
+    end
+
     for _, item in pairs(data.raw[category]) do
         if not item.hidden and not has_value(random_item_blacklist, item.name) then 
             local spoil_minute =  math.floor(settings.startup["everything-spoilage_random-spoilage-min-spoil-time"].value+(settings.startup["everything-spoilage_random-spoilage-max-spoil-time"].value - settings.startup["everything-spoilage_random-spoilage-min-spoil-time"].value)*randomValue()^3)
@@ -174,4 +178,6 @@ for _, category in pairs(categories) do
             end
         end
     end
+
+    ::continue::
 end

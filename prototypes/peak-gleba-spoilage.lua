@@ -17,10 +17,16 @@ local categories = {
 }
 
 for _, category in pairs(categories) do
+    if category=="module" and not settings.startup["everything-spoilage_all-modules-spoil"].value then
+        goto continue
+    end
+    
     for _, item in pairs(data.raw[category]) do
         if not item.spoil_result and not item.hidden and item.name ~= spoil_result then
             item.spoil_result = spoil_result
             item.spoil_ticks = settings.startup["everything-spoilage_spoil-time"].value * minute
         end
     end
+
+    ::continue::
 end
