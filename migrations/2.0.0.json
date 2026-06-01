@@ -8,5 +8,8 @@
     ],
     "item-subgroup": [
         ["scrap-processing", "waste-processing"]
+    ],
+    "mod-setting":[
+        ["everything-spoilage_normal-modules-spoil", "everything-spoilage_all-modules-spoil"]
     ]
 }
